@@ -1,0 +1,31 @@
+
+<h1>Cell Automaton - 1D - Rule 30</h1>
+
+<br>
+
+<table>
+
+  <%  @arr_rule30.each do |row| %>
+
+    <tr>
+
+      <% row.each_index do |id| %>
+
+        <% num=row[id] %>
+
+        <% if num==0 %>
+          <% color='#FAFAFA' %>
+        <% else %>
+          <% color='#000000' %>
+        <% end %>
+
+        <td bgcolor=<%= color %> width=15px height=15px >
+        </td>
+
+      <% end %>
+
+    </tr>
+
+  <% end %>
+
+</table>
