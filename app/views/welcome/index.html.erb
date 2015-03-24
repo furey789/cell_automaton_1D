@@ -1,31 +1,40 @@
 
-<h1>Cell Automaton - 1D - Rule 30</h1>
+<div class="page-header">
+</div>
 
-<br>
 
-<table>
 
-  <%  @arr_rule30.each do |row| %>
 
-    <tr>
+<div class="container">
+  <br>
+  <br>
 
-      <% row.each_index do |id| %>
+  <table class="table">
+    <thead>
+    <th>Rule Number</th>
+    <th>Behavior</th>
+    <th>Triplets that Return One</th>
+    </thead>
 
-        <% num=row[id] %>
-
-        <% if num==0 %>
-          <% color='#FAFAFA' %>
-        <% else %>
-          <% color='#000000' %>
-        <% end %>
-
-        <td bgcolor=<%= color %> width=15px height=15px >
-        </td>
-
+    <tbody>
+      <% @rules.each do |rule| %>
+        <tr>
+          <td>
+            <h3><%= rule.name %></h3>
+          </td>
+          <td>
+            <h3><%= rule.behavior %></h3>
+          </td>
+          <td>
+            <h3><%= rule.returns_one %></h3>
+          </td>
+          <td>
+            <%= link_to "Run it", one_dim_rule_path(rule), class: "btn btn-primary" %>
+          </td>
+        </tr>
       <% end %>
+    </tbody>
 
-    </tr>
+  </table>
 
-  <% end %>
-
-</table>
+</div>

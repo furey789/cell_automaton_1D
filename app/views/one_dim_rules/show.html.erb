@@ -1,0 +1,44 @@
+
+<div class="container">
+
+  <h1>Rule <%= @rule.name %></h1>
+
+  <h2>
+    Triplets that Return 1: <%= @rule.returns_one %>
+    <div class="pull-right">
+      <%= link_to "Back", root_path, class: "btn btn-primary" %>
+    </div>
+  </h2>
+
+
+  <br>
+
+  <table>
+
+    <%  @arr_master.each do |row| %>
+
+      <tr>
+
+        <% row.each_index do |id| %>
+
+          <% num=row[id] %>
+
+          <% if num==0 %>
+            <% color='#FAFAFA' %>
+          <% else %>
+            <% color='#000000' %>
+          <% end %>
+
+          <td bgcolor=<%= color %> width=15px height=15px >
+          </td>
+
+        <% end %>
+
+      </tr>
+
+    <% end %>
+
+  </table>
+
+
+</div>
