@@ -21,3 +21,22 @@
  .navbar-inverse {
      background-color: orange;
  }
+
+ body{
+   background-image: url(gray_marble_texture.jpg);
+ }
+
+ table, th {
+  font-family: serif;
+  font-size: 15pt;
+  text-align: center;
+  color: #FEEEBC;
+  background-color: #151B54;
+  border-radius: 10pt;
+ }
+
+ th {
+  font-family: sans-serif;
+  font-size: 17pt;
+  height: 75px;
+ }
