@@ -11,15 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324132005) do
+ActiveRecord::Schema.define(version: 20150707155008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "one_dim_rules", force: :cascade do |t|
-    t.string "behavior"
-    t.string "name"
-    t.string "returns_one"
+    t.string  "name"
+    t.integer "t000",        default: 0
+    t.integer "t010",        default: 0
+    t.integer "t001",        default: 0
+    t.integer "t011",        default: 0
+    t.integer "t100",        default: 0
+    t.integer "t110",        default: 0
+    t.integer "t101",        default: 0
+    t.integer "t111",        default: 0
+    t.integer "seed_number", default: 0
+    t.string  "seed_state",  default: "fixed"
   end
 
 end

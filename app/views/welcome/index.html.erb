@@ -1,93 +1,9 @@
 
-<div class="page-header">
-</div>
-
-<div class="container">
-
-  <br>
-  <br>
-
   <div class="container">
 
-    <div class="" style="font-size: 20pt">
-      <b>Example Rule Sets:</b>
-    </div>
+    <h2>
+      <b>What is a 1D Cellular Automaton?</b>
+    </h2>
     <br>
 
-    <table class="table">
-      <thead>
-        <th>Rule Number</th>
-        <th>Triplets that Return One</th>
-        <th>Wrap Around</th>
-        <th> </th>
-      </thead>
-
-      <tbody>
-        <% @rules.each do |rule| %>
-          <tr>
-            <td>
-              <h3><%= rule.name %></h3>
-            </td>
-            <td>
-              <h3><%= rule.returns_one %></h3>
-            </td>
-            <td>
-              <h3><%= check_box_tag('return_one','yes', true, {"width": "50px", "height": "50px"})  %></h3>
-            </td>
-            <td>
-              <h3><%= link_to "Run", one_dim_rule_path(rule), class: "btn btn-primary" %></h3>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-
-    </table>
-
   </div>
-
-
-  <br><br>
-
-    <div class="container">
-
-      <div style="font-size: 20pt">
-        <b>Create Your Own Rule Set:</b>
-      </div>
-      <br>
-
-      <table class="table">
-        <thead>
-          <th>Triplet</th>
-          <th>Return One</th>
-        </thead>
-
-        <tbody >
-          <% triplets = ['000','010','001','011','100','110','101','111'] %>
-          <% triplets.each do |triplet| %>
-            <tr>
-              <td>
-                <h3><%= triplet %></h3>
-              </td>
-              <td>
-                <h3><%= check_box_tag('return_one','yes', true, {"width": "50px", "height": "50px"})  %></h3>
-              </td>
-            </tr>
-          <% end %>
-          <tr>
-            <td>
-            </td>
-            <td>
-              <div>
-                <h3><%= link_to "Run", class: "btn btn-primary" %></h3>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-
-      </table>
-
-
-
-    </div>
-
-</div>
