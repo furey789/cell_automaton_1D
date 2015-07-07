@@ -2,34 +2,27 @@
 <div class="container">
 
   <br>
+  <div class="pull-right">
+    <%= link_to "Back", one_dim_rules_path, class: "btn btn-primary" %>
+  </div>
 
+  <br>
   <h2>
-    <!-- <% triplet_strings = [] %>
-    <% rule_json = @rule.as_json%>
-    <% triplets = rule_json.select {|key,value| value == 1} %>
-    <% keys = triplets.keys %>
-    <% keys.each do |key| %>
-      <%  triplet_strings.push( key.slice(1,3) ) %>
-    <% end %>
-    Triplets that Fill a Cell: <%= triplet_strings.sort.join(', ') %> -->
-    <div class="pull-right">
-      <%= link_to "Back", one_dim_rules_path, class: "btn btn-primary" %>
-    </div>
+    <b>Run Your Own Model:</b>
   </h2>
 
-  <br>
-  <br>
+  <hr>
   <br>
 
   <%= form_for @rule do |f| %>
-    <% triplets = @rule.as_json.select {|key,value| value == 1 || value == 0 && key != 'seed_number'} %>
+    <% triplets = @rule.as_json.select {|key,value| (value == 1 || value == 0) && key != 'seed_number'} %>
 
     <div class="row">
-      <div class="col-md-3" style="font-size: 18pt">
+      <div class="col-md-4" style="font-size: 18pt">
         <b>Triplets that Fill a Cell:</b>
       </div>
       <% triplets.keys.each do |key|%>
-        <div class="col-md-1" style="font-size: 18pt">
+        <div class="col-md-1" style="font-size: 18pt; padding: 0">
           <%= f.label key.slice(1,3) %>
           <%= f.check_box(key.to_sym) %>
         </div>
@@ -40,7 +33,7 @@
       <div class="col-md-4" style="font-size: 18pt">
         <b>Initial Filled-Cell Number:</b>
       </div>
-      <div class="col-md-8" style="font-size: 18pt">
+      <div class="col-md-8" style="font-size: 18pt; padding: 0">
         <% (1..10).each do |val|  %>
           <div class="col-md-1" style="font-size: 18pt; padding: 0">
             <%= f.label :seed_number, val %>
