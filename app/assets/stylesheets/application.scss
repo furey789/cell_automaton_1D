@@ -28,20 +28,32 @@
    background-image: url(gray_marble_texture.jpg);
  }
 
- table, th {
+ section{
   font-family: sans-serif;
-  font-size: 15pt;
-  text-align: center;
-  color: #FEEEBC;
-  background-color: #151B54;
-  border-radius: 10pt;
+  font-size: 20pt;
  }
 
- th {
+ div {
   font-family: sans-serif;
-  font-size: 17pt;
-  height: 75px;
+  font-size: 18pt;
  }
+.col-md-1 {
+   font-weight: bold;
+ }
+ // table, th {
+ //  font-family: sans-serif;
+ //  font-size: 15pt;
+ //  text-align: center;
+ //  // color: #FEEEBC;
+ //  // background-color: #151B54;
+ //  // border-radius: 10pt;
+ // }
+
+ // th {
+ //  font-family: sans-serif;
+ //  font-size: 17pt;
+ //  height: 75px;
+ // }
 
 input[type='checkbox'] {
    width: 18px;
