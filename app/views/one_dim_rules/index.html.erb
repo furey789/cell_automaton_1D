@@ -8,15 +8,14 @@
 
   <br>
   <h2>
-    <b>Run Your Own Model:</b>
+    <b>Create and Run Your Own Model:</b>
   </h2>
 
   <hr>
   <br>
 
   <%= form_for @rule do |f| %>
-    <% triplets = @rule.as_json.select {|key,value| (value == 1 || value == 0) && key != 'seed_number'} %>
-
+    <% triplets = @rule.as_json.select {|key| key[0] == 't'} %>
     <div class="row">
       <div class="col-md-4" style="font-size: 18pt">
         <b>Triplets that Fill a Cell:</b>

@@ -2,8 +2,12 @@
 class OneDimRulesController < ApplicationController
 
   def index
-    # @rules = One_dim_rule.all
-    @rule = One_dim_rule.find_by(id: 999)
+    if ( session[:previous_url] == "/")
+      @rule = One_dim_rule.find_by(id: 1)
+    else
+      @rule = One_dim_rule.find_by(id: 999)
+    end
+    session[:previous_url] = request.fullpath
     self.get_model_output(@rule)
   end
 
