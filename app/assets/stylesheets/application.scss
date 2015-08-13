@@ -25,7 +25,7 @@
  body{
    padding-top: 85px;
    padding-bottom: 85px;
-   background-image: url(gray_marble_texture.jpg);
+   background-image: url(asset-path("gray_marble_texture.jpg"));
  }
 
  section{
@@ -37,7 +37,7 @@
   font-family: sans-serif;
   font-size: 18pt;
  }
- 
+
 .col-md-1 {
    font-weight: bold;
  }
