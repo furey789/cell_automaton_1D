@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707155008) do
+ActiveRecord::Schema.define(version: 20150824175818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150707155008) do
     t.integer "t111",        default: 0
     t.integer "seed_number", default: 0
     t.string  "seed_state",  default: "fixed"
+    t.boolean "wrap_around", default: true
   end
 
 end

@@ -46,29 +46,63 @@ class OneDimRulesController < ApplicationController
 
     @arr_master<<arr
 
-    (0..rows).each do |i|
+    if (rule.wrap_around == true)
 
-      arr=Array.new(cols,0)
+      (0..rows).each do |i|
 
-      @arr_master[i].each_index do |id|
+        arr=Array.new(cols,0)
 
-        if id==0
-          triplet_now=[ @arr_master[i][cols-1], @arr_master[i][id], @arr_master[i][id+1] ]
-        elsif id==(cols-1)
-          triplet_now=[ @arr_master[i][id-1], @arr_master[i][id], @arr_master[i][0] ]
-        else
-          triplet_now=@arr_master[i][(id-1)..(id+1)]
+        @arr_master[i].each_index do |id|
+
+          if ( id > 0 and id < (cols-1) )
+            triplet_now=@arr_master[i][(id-1)..(id+1)]
+          elsif id == 0
+            triplet_now=[ @arr_master[i][cols-1], @arr_master[i][id], @arr_master[i][id+1] ]
+          else
+            triplet_now=[ @arr_master[i][id-1], @arr_master[i][id], @arr_master[i][0] ]
+          end
+
+          if rule["t"+triplet_now.join()] == 1
+            arr[id]=1
+          else
+            arr[id]=0
+          end
+
         end
 
-        if rule["t"+triplet_now.join()] == 1
-          arr[id]=1
-        else
-          arr[id]=0
-        end
+        @arr_master<<arr
 
       end
 
-      @arr_master<<arr
+    end
+
+    if (rule.wrap_around == false)
+
+      (0..rows).each do |i|
+
+        arr=Array.new(cols,0)
+
+        @arr_master[i].each_index do |id|
+
+          if ( id > 0 and id < (cols-1) )
+            triplet_now=@arr_master[i][(id-1)..(id+1)]
+          elsif id == 0
+            triplet_now=[ 0, @arr_master[i][id], @arr_master[i][id+1] ]
+          else
+            triplet_now=[ @arr_master[i][id-1], @arr_master[i][id], 0 ]
+          end
+
+          if rule["t"+triplet_now.join()] == 1
+            arr[id]=1
+          else
+            arr[id]=0
+          end
+
+        end
+
+        @arr_master<<arr
+
+      end
 
     end
 
@@ -77,7 +111,7 @@ class OneDimRulesController < ApplicationController
   private
 
   def one_dim_rule_params
-    params.require(:one_dim_rule).permit(:t000,:t010,:t001,:t011,:t100,:t110,:t101,:t111,:seed_number,:seed_state)
+    params.require(:one_dim_rule).permit(:t000,:t010,:t001,:t011,:t100,:t110,:t101,:t111,:seed_number,:seed_state,:wrap_around)
   end
 
 end
