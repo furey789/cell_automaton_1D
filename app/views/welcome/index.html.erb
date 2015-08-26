@@ -15,7 +15,7 @@
     Create a sequence of 0's and 1's, such as:
       <p>
         <div class="row">
-          <div class="col-md-4 col-md-offset-4" style="padding: 0">
+          <div class="col-md-4 col-md-offset-4">
             <div class="col-md-3"></div>
             <div class="col-md-1"> 0 </div>
             <div class="col-md-1"> 0 </div>
@@ -31,7 +31,7 @@
     <div>
     Define some rules for triplets of 0's and 1's, such as:
       <p>
-        <div class="row">
+        <div class="row triplet_rules">
           <div class="col-md-3 col-md-offset-1">
             <ul>
               <li>100 becomes 1</li>
@@ -56,7 +56,7 @@
     Below, only the triplet 001 leads to a 1, and ends of the new sequence are assigned 0.
       <p>
         <div class="row">
-          <div class="col-md-4 col-md-offset-4" style="padding: 0">
+          <div class="col-md-4 col-md-offset-4">
             <div class="col-md-3"></div>
             <div class="col-md-1"> 0 </div>
             <div class="col-md-1"> 0 </div>
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-4" style="padding: 0">
+          <div class="col-md-4 col-md-offset-4">
             <div class="col-md-3"></div>
             <div class="col-md-1"> 0 </div>
             <div class="col-md-1"> 0 </div>
@@ -84,7 +84,7 @@
     Repeat. Applying the rules again gives:
       <p>
         <div class="row">
-          <div class="col-md-4 col-md-offset-4" style="padding: 0">
+          <div class="col-md-4 col-md-offset-4">
             <div class="col-md-3"></div>
             <div class="col-md-1"> 0 </div>
             <div class="col-md-1"> 0 </div>
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-4" style="padding: 0">
+          <div class="col-md-4 col-md-offset-4">
             <div class="col-md-3"></div>
             <div class="col-md-1"> 0 </div>
             <div class="col-md-1"> 0 </div>
@@ -106,7 +106,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-4" style="padding: 0">
+          <div class="col-md-4 col-md-offset-4">
             <div class="col-md-3"></div>
             <div class="col-md-1"> 0 </div>
             <div class="col-md-1"> 1 </div>
@@ -121,7 +121,7 @@
 
   </section>
 
-  <div style = "text-align: center">
+  <div class="center_button">
     <%= link_to "Create a Model", one_dim_rules_path, class: "btn btn-primary btn-lg" %>
   </div>
 

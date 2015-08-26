@@ -62,10 +62,18 @@ class OneDimRulesController < ApplicationController
             triplet_now=[ @arr_master[i][id-1], @arr_master[i][id], @arr_master[i][0] ]
           end
 
+          triplet_now.each_with_index do |val,id|
+            if val > 0
+              triplet_now[id] = 1
+            end
+          end
+
           if rule["t"+triplet_now.join()] == 1
             arr[id]=1
-          else
-            arr[id]=0
+          elsif rule["t"+triplet_now.join()] == 2
+            arr[id]=2
+          elsif rule["t"+triplet_now.join()] == 3
+            arr[id]=3
           end
 
         end
@@ -92,10 +100,18 @@ class OneDimRulesController < ApplicationController
             triplet_now=[ @arr_master[i][id-1], @arr_master[i][id], 0 ]
           end
 
+          triplet_now.each_with_index do |val,id|
+            if val > 0
+              triplet_now[id] = 1
+            end
+          end
+
           if rule["t"+triplet_now.join()] == 1
             arr[id]=1
-          else
-            arr[id]=0
+          elsif rule["t"+triplet_now.join()] == 2
+            arr[id]=2
+          elsif rule["t"+triplet_now.join()] == 3
+            arr[id]=3
           end
 
         end
